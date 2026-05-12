@@ -609,9 +609,9 @@ body {
   border-bottom: 1px solid var(--text-muted);
 }
 .paper-questions {
-  column-count: 2;
-  column-gap: 24px;
-  column-rule: 1px solid var(--border);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px 24px;
 }
 .paper-q {
   margin-bottom: 14px;
@@ -692,13 +692,13 @@ body {
   }
   .paper-header {
     border-bottom: 2px solid #111;
-    column-span: all;
+    grid-column: 1 / -1;
   }
   .paper-title { font-size: 1.3rem; }
   .paper-questions {
-    column-count: 2;
-    column-gap: 20px;
-    column-rule: 1px solid #ccc;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4px 20px;
   }
   .paper-q {
     background: #fff;
@@ -741,10 +741,9 @@ body {
   .input-info h2 { font-size: 1.3rem; }
   .input-info p { color: #333; }
   .answer-grid {
-    display: block;
-    column-count: 2;
-    column-gap: 20px;
-    column-rule: 1px solid #ccc;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4px 20px;
   }
   .answer-card {
     background: #fff;
