@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grammar Level Test | 영어 문법 레벨 테스트</title>
+  <meta name="description" content="영어학원 신입생 문법 레벨 테스트 시스템">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+KR:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Screen 1: Landing -->
+    <section id="screen-landing" class="screen active">
+      <div class="landing-container">
+        <div class="landing-logo">
+          <div class="logo-icon">
+            <svg viewBox="0 0 80 80" fill="none">
+              <rect width="80" height="80" rx="20" fill="url(#g1)"/>
+              <path d="M20 55V25h8l10 18 10-18h8v30h-7V37l-8.5 15h-5L27 37v18h-7z" fill="#fff"/>
+              <defs><linearGradient id="g1" x1="0" y1="0" x2="80" y2="80"><stop stop-color="#6C63FF"/><stop offset="1" stop-color="#3B82F6"/></linearGradient></defs>
+            </svg>
+          </div>
+          <h1 class="landing-title">Grammar Level Test</h1>
+          <p class="landing-subtitle">영어 문법 레벨 테스트</p>
+        </div>
+        <div class="landing-form">
+          <div class="form-group">
+            <label for="studentName">학생 이름</label>
+            <input type="text" id="studentName" placeholder="이름을 입력하세요" autocomplete="off">
+          </div>
+          <div class="form-group">
+            <label for="gradeSelect">학년 선택</label>
+            <div class="grade-grid">
+              <button class="grade-btn" data-grade="grade4">초등 4학년</button>
+              <button class="grade-btn" data-grade="grade5">초등 5학년</button>
+              <button class="grade-btn" data-grade="grade6">초등 6학년</button>
+              <button class="grade-btn" data-grade="grade7">중학 1학년</button>
+              <button class="grade-btn" data-grade="grade8">중학 2학년</button>
+              <button class="grade-btn" data-grade="grade9">중학 3학년</button>
+            </div>
+          </div>
+          <div class="form-actions">
+            <button id="btnPrintTest" class="btn btn-outline" disabled>
+              <span class="btn-icon">🖨️</span> 시험지 인쇄
+            </button>
+            <button id="btnStartInput" class="btn btn-primary" disabled>
+              <span class="btn-icon">✏️</span> 답안 입력 시작
+            </button>
+          </div>
+        </div>
+        <!-- History -->
+        <div id="historySection" class="history-section" style="display:none;">
+          <h3>📋 최근 시험 기록</h3>
+          <div id="historyList" class="history-list"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Screen 2: Print Test Paper -->
+    <section id="screen-print" class="screen">
+      <div class="print-test-paper">
+        <div class="paper-header">
+          <h1 class="paper-title">영어 문법 레벨 테스트</h1>
+          <div class="paper-info">
+            <span>이름: <span id="printName" class="blank-line"></span></span>
+            <span>학년: <span id="printGrade"></span></span>
+            <span>날짜: <span id="printDate"></span></span>
+            <span>점수: _____ / 40</span>
+          </div>
+        </div>
+        <div id="printQuestions" class="paper-questions"></div>
+      </div>
+      <div class="no-print toolbar">
+        <button onclick="window.print()" class="btn btn-primary">🖨️ 인쇄하기</button>
+        <button onclick="App.showScreen('landing')" class="btn btn-outline">← 돌아가기</button>
+      </div>
+    </section>
+
+    <!-- Screen 3: Answer Input -->
+    <section id="screen-input" class="screen">
+      <div class="input-container">
+        <div class="input-header">
+          <div class="input-info">
+            <h2>답안 입력</h2>
+            <p><strong id="inputStudentName"></strong> | <strong id="inputGrade"></strong></p>
+          </div>
+          <div class="input-progress">
+            <div class="progress-bar"><div id="progressFill" class="progress-fill"></div></div>
+            <span id="progressText">0 / 40</span>
+          </div>
+        </div>
+        <div id="answerGrid" class="answer-grid"></div>
+        <div class="input-actions">
+          <button onclick="App.showScreen('landing')" class="btn btn-outline">← 돌아가기</button>
+          <button id="btnSubmit" class="btn btn-primary btn-large" disabled>
+            📊 채점하기
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Screen 4: Report Card -->
+    <section id="screen-report" class="screen">
+      <div id="reportCard" class="report-card"></div>
+      <div class="no-print toolbar">
+        <button onclick="window.print()" class="btn btn-primary">🖨️ 성적표 인쇄</button>
+        <button onclick="App.showScreen('landing')" class="btn btn-outline">← 새 시험</button>
+      </div>
+    </section>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="data-grade4.js"></script>
+  <script src="data-grade5.js"></script>
+  <script src="data-grade6.js"></script>
+  <script src="data-grade7.js"></script>
+  <script src="data-grade8.js"></script>
+  <script src="data-grade9.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
