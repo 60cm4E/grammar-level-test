@@ -86,13 +86,18 @@
             <h2>답안 입력</h2>
             <p><strong id="inputStudentName"></strong> | <strong id="inputGrade"></strong></p>
           </div>
-          <div class="input-progress">
-            <div class="progress-bar"><div id="progressFill" class="progress-fill"></div></div>
-            <span id="progressText">0 / 40</span>
+          <div class="input-header-right no-print">
+            <button onclick="window.print()" class="btn btn-outline btn-sm" title="답안지 인쇄">
+              🖨️ 답안지 인쇄
+            </button>
+            <div class="input-progress">
+              <div class="progress-bar"><div id="progressFill" class="progress-fill"></div></div>
+              <span id="progressText">0 / 40</span>
+            </div>
           </div>
         </div>
         <div id="answerGrid" class="answer-grid"></div>
-        <div class="input-actions">
+        <div class="input-actions no-print">
           <button onclick="App.showScreen('landing')" class="btn btn-outline">← 돌아가기</button>
           <button id="btnSubmit" class="btn btn-primary btn-large" disabled>
             📊 채점하기

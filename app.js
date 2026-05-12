@@ -113,7 +113,7 @@ const App = {
         <div class="choice-row">
           ${q.choices.map((c, ci) => `
             <button class="choice-btn" data-qid="${q.id}" data-choice="${ci + 1}"
-              title="${c}">${labels[ci]}</button>
+              title="${c}"><span class="choice-label">${labels[ci]}</span><span class="choice-text">${c}</span></button>
           `).join('')}
         </div>
       `;
