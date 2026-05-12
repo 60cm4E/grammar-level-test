@@ -307,6 +307,7 @@ body {
   margin-bottom: 12px;
   line-height: 1.5;
   min-height: 2.5em;
+  white-space: pre-line;
 }
 .q-stem code {
   background: rgba(108,99,255,0.1);
@@ -623,7 +624,7 @@ body {
   page-break-inside: avoid;
 }
 .paper-q-num { font-weight: 800; color: var(--accent-light); margin-right: 6px; }
-.paper-q-stem { font-size: 0.9rem; margin-bottom: 8px; line-height: 1.5; }
+.paper-q-stem { font-size: 0.9rem; margin-bottom: 8px; line-height: 1.5; white-space: pre-line; }
 .paper-q-choices {
   display: flex;
   flex-direction: column;
@@ -711,7 +712,7 @@ body {
     page-break-inside: avoid;
   }
   .paper-q-num { color: #111; }
-  .paper-q-stem { font-size: 9.5pt; margin-bottom: 4px; line-height: 1.4; }
+  .paper-q-stem { font-size: 9.5pt; margin-bottom: 4px; line-height: 1.4; white-space: pre-line; }
   .paper-q-choices {
     display: flex;
     flex-direction: column;
@@ -771,6 +772,7 @@ body {
     margin-bottom: 4px;
     line-height: 1.4;
     min-height: auto;
+    white-space: pre-line;
   }
   .choice-row {
     display: flex;
